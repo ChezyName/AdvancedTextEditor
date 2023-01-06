@@ -5,19 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Advanced Markdown Editor</title>
-    <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
     <link rel="stylesheet" type="text/css" media="screen" href="index.css">
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
   </head>
   <body>
-    <a href="./richtext.html">Other Page</a>
-    <div class="main-content">
-        <textarea class="text-editor"
-        spellcheck="false"
-        autocomplete="false"
-        autofocus></textarea>
-
-        <div class="preview"></div>
+    <div id="editor">
+      <h1>Title Of Document</h1>
+      <p>Start Typing...</p>
     </div>
+
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <script src="index.js"></script>
   </body>
 </html>

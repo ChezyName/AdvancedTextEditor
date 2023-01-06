@@ -1,11 +1,22 @@
-//Constants
-const textEditor = document.querySelector('.text-editor');
-const preview = document.querySelector('.preview');
-const converter = new showdown.Converter();
+var toolbarOptions = [
+    ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+    ['blockquote', 'code-block'],
+    [{ 'header': 1 }, { 'header': 2 }],
+    [ 'link'],
+    [{ 'align': [] }],
+]
 
+var options = {
+    modules: {
+      toolbar: {
+        container: toolbarOptions,
+      }
+    },
+    theme: 'snow'
+};
 
-textEditor.addEventListener('keyup', event => {
-    const { value } = event.target;
-    const html = converter.makeHtml(value);
-    textEditor.innerHTML = html;
-});
+var quill = new Quill('#editor', options);
+
+function saveDocument() {
+
+}

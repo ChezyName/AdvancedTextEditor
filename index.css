@@ -11,34 +11,7 @@ html,body {
     margin: 0;
 }
 
-.main-content {
-    display: flex;
+#editor {
+    width: 100%;
     height: 100%;
-}
-
-.text-editor {
-    flex: 1;
-    padding: 50px;
-    border: 0;
-    resize: none;
-    background-color: #ffff;
-    color: #000;
-    text-align: left;
-    font-size: 1rem;
-}
-
-.text-editor:focus{
-    border: none;
-    outline: none;
-}
-
-.preview {
-    flex: 1;
-    padding: 0 50px;
-    background-color: #f3f3f3;
-    font-size: 1rem;
-}
-
-.preview code {
-    background-color: #333;
 }
