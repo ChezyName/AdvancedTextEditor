@@ -7,5 +7,5 @@ const converter = new showdown.Converter();
 textEditor.addEventListener('keyup', event => {
     const { value } = event.target;
     const html = converter.makeHtml(value);
-    preview.innerHTML = html;
+    textEditor.innerHTML = html;
 });
