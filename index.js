@@ -1,5 +1,6 @@
 var toolbarOptions = [
     ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
     ['blockquote', 'code-block'],
     [{ 'header': 1 }, { 'header': 2 }],
     [ 'link'],
