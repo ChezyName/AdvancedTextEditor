@@ -50,3 +50,31 @@ elementSendB.addEventListener('click',() => {
   forceDownload(Date.now().toLocaleString() + ".md",markdown);
   console.log(markdown);
 });
+
+function saveProgress(){
+  console.log("Saving Progress...");
+  document.cookie = "AMDE-MD=" + editor.innerHTML + "; SameSite=None; Secure";
+  console.log(editor.innerHTML);
+  console.log(document.cookie);
+}
+
+var isCtrl = false;
+document.onkeyup=function(e){
+    if(e.keyCode == 17) isCtrl=false;
+}
+
+document.onkeydown=function(e){
+    if(e.keyCode == 17) isCtrl=true;
+    if(e.keyCode == 83 && isCtrl == true) {
+        //run code for CTRL+S -- ie, save!
+        saveProgress();
+        return false;
+    }
+}
+
+if(document.cookie.includes("AMDE-MD=")){
+  var entireMD = document.cookie.substring(
+    str.indexOf("AMDE-MD=") + 1, 
+    str.lastIndexOf(";")
+);
+}
