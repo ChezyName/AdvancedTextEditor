@@ -53,9 +53,14 @@ elementSendB.addEventListener('click',() => {
 
 function saveProgress(){
   console.log("Saving Progress...");
-  document.cookie = "AMDE-MD=" + editor.innerHTML + "; SameSite=None; Secure";
-  console.log(editor.innerHTML);
-  console.log(document.cookie);
+  localStorage.setItem('MarkdownEditor',editor.innerHTML);
+  console.log(localStorage.getItem('MarkdownEditor'));
+}
+
+function getCookie (name) {
+	let value = `; ${document.cookie}`;
+	let parts = value.split(`; ${name}=`);
+	if (parts.length === 2) return parts.pop().split(';').shift();
 }
 
 var isCtrl = false;
@@ -72,9 +77,6 @@ document.onkeydown=function(e){
     }
 }
 
-if(document.cookie.includes("AMDE-MD=")){
-  var entireMD = document.cookie.substring(
-    str.indexOf("AMDE-MD=") + 1, 
-    str.lastIndexOf(";")
-);
+if(localStorage.getItem('MarkdownEditor') != null && localStorage.getItem('MarkdownEditor') != ""){
+  editor.innerHTML = localStorage.getItem('MarkdownEditor');
 }
