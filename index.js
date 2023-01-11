@@ -57,12 +57,6 @@ function saveProgress(){
   console.log(localStorage.getItem('MarkdownEditor'));
 }
 
-function getCookie (name) {
-	let value = `; ${document.cookie}`;
-	let parts = value.split(`; ${name}=`);
-	if (parts.length === 2) return parts.pop().split(';').shift();
-}
-
 var isCtrl = false;
 document.onkeyup=function(e){
     if(e.keyCode == 17) isCtrl=false;
